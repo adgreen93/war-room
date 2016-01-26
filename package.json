@@ -1,0 +1,16 @@
+{
+  "name": "chat2u",
+  "version": "1.0.0",
+  "description": "chat2u",
+  "main": "chat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^2.0.1",
+    "socket.io": "^1.4.4"
+  }
+}
