@@ -1,0 +1,33 @@
+
+  <body>
+
+    <table class="table-striped" id="messages"></table>
+        <div class="well" style="text-align:center;">
+            <form class="form-inline" action="">
+              <div class="form-group">
+                  <label for="exampleInputName2">Message:</label>
+                  <input type="text" class="form-control" id="m">
+              </div>
+              <button class="btn btn-default">Send</button>
+            </form>
+        </div>
+        
+  </body>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+  <script>
+
+      var socket = io();
+        $('form').submit(function(){
+        socket.emit('chat message', $('#m').val());
+        $('#m').val('');
+        return false;
+        });
+
+      socket.on('chat message', function(msg){
+        $('#messages').append($('<tr>').text(msg));
+      });
+
+  </script>

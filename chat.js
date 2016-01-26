@@ -15,9 +15,9 @@ app.get('/', function(req, res){
   res.render('home');
 });
 
-app.get('/chat', function(req, res){
-  res.render('chat');
-});
+app.get('/tablechat', function(req, res){
+	res.render('tablechat');
+})
 
 io.on('connection', function(socket){
 	socket.join('some_room');
